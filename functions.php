@@ -119,8 +119,16 @@ add_action( 'widgets_init', 'comet_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function comet_scripts() {
-	wp_enqueue_style( 'comet-style', get_stylesheet_uri() );
+function comet_scripts() {	
+	wp_enqueue_style('comet-bundle', get_template_directory_uri().'/css/bundle.css');
+	wp_enqueue_style('comet-style', get_template_directory_uri().'/css/style.css');
+	wp_enqueue_style( 'comet-css', get_stylesheet_uri() );
+	wp_enqueue_style('comet-fonts', comet_google_fonts());
+
+	wp_enqueue_script('html5', 'http://html5shim.googlecode.com/svn/trunk/html5.js');
+	wp_script_add_data('html5', 'conditional', 'lt IE 9');
+	wp_enqueue_script('respond', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
+	wp_script_add_data('respond', 'conditional', 'lt IE 9');
 
 	wp_enqueue_script( 'comet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -131,6 +139,22 @@ function comet_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'comet_scripts' );
+
+/**
+ * Custom googlefonts function
+ */
+function comet_google_fonts(){
+	$fonts= array(
+		'Montserrat:400,700',
+		'Raleway:300,400,500',
+		'Halant:300,400',
+	);
+
+	$fontsurl = add_query_arg(array(
+		'family' => urlencode(implode('|', $fonts)),
+		'subset' => urlencode('latin'),
+	), 'https://fonts.googleapis.com/css');
+}
 
 /**
  * Implement the Custom Header feature.
