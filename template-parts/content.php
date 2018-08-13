@@ -22,7 +22,7 @@
 	</div>
 	<div class="post-media"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
 	<div class="post-body">
-	<p><?php wp_trim_words(get_the_content(), 50, ''); ?></p>
+	<p><?php echo wp_trim_words(get_the_content(), 50, ''); ?></p>
 	<p><a href="<?php the_permalink(); ?>" class="btn btn-color btn-sm">Read More</a></p>
 	</div>
 </article>
