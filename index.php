@@ -37,7 +37,11 @@ get_header();
       <!-- Main Content Area -->
       <div class="col-md-8">
         <div class="blog-posts">
-          <?php get_template_part('template-parts/content'); ?>
+        <?php if(have_posts()): ?>
+          <?php while(have_posts()): the_post(); ?>
+            <?php get_template_part('template-parts/content'); ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
         </div>
     
         <!-- Pagination -->

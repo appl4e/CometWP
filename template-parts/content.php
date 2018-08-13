@@ -12,20 +12,17 @@
 
 <article class="post-single">
 	<div class="post-info">
-	<h2><a href="#">Checklists for Startups</a></h2>
-	<h6 class="upper"><span>By</span><a href="#"> Admin</a><span class="dot"></span><span>28 September 2015</span><span class="dot"></span><a href="#" class="post-tag">Startups</a></h6>
+	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	<h6 class="upper">
+		<span>By</span><a href="<?php echo get_template_directory_uri(); ?>/author/<?php the_author(); ?>"> <?php the_author(); ?></a>
+		<span class="dot"></span>
+		<span><?php the_time('d F Y'); ?></span>
+		<span class="dot"></span>
+		<a href="#" class="post-tag"><?php the_tags(); ?></a></h6>
 	</div>
-	<div class="post-media">
-	<div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true" class="flexslider nav-outside">
-		<ul class="slides">
-		<li><img src="images/blog/1.jpg" alt=""></li>
-		<li><img src="images/blog/2.jpg" alt=""></li>
-		<li><img src="images/blog/3.jpg" alt=""></li>
-		</ul>
-	</div>
-	</div>
+	<div class="post-media"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
 	<div class="post-body">
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Repudiandae possimus quas odio nisi optio asperiores, vitae error laudantium, ratione odit ipsa obcaecati debitis deleniti minus, illo maiores placeat omnis magnam.</p>
-	<p><a href="#" class="btn btn-color btn-sm">Read More</a></p>
+	<p><?php wp_trim_words(get_the_content(), 50, ''); ?></p>
+	<p><a href="<?php the_permalink(); ?>" class="btn btn-color btn-sm">Read More</a></p>
 	</div>
 </article>
