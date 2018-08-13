@@ -29,7 +29,7 @@
     </div>
     <header id="topnav">
       <div class="container">
-        <div class="logo"><a href="index.html"><img src="images/logo_light.png" alt="" class="logo-light"><img src="images/logo_dark.png" alt="" class="logo-dark"></a></div>
+        <div class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/images/logo_light.png" alt="" class="logo-light"><img src="<?php echo get_template_directory_uri(); ?>/images/logo_dark.png" alt="" class="logo-dark"></a></div>
         <div class="menu-extras">
           <div class="menu-item">
             <div class="cart"><a href="#"><i class="ti-bag"></i><span class="cart-number">2</span></a>
@@ -48,11 +48,11 @@
                 </div>
                 <ul class="nav product-list">
                   <li>
-                    <div class="product-thumbnail"><img src="images/shop/2.jpg" alt=""></div>
+                    <div class="product-thumbnail"><img src="<?php echo get_template_directory_uri(); ?>/images/shop/2.jpg" alt=""></div>
                     <div class="product-summary"><a href="#">Premium Suit Blazer</a><span>$199.99</span></div>
                   </li>
                   <li>
-                    <div class="product-thumbnail"><img src="images/shop/5.jpg" alt=""></div>
+                    <div class="product-thumbnail"><img src="<?php echo get_template_directory_uri(); ?>/images/shop/5.jpg" alt=""></div>
                     <div class="product-summary"><a href="#">Reiss Vara Tailored Blazer</a><span>$199.99</span></div>
                   </li>
                 </ul>
