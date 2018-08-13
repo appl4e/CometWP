@@ -92,11 +92,8 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bundle.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	
+    
+    
 	<?php wp_footer(); ?>
   </body>
 

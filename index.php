@@ -14,46 +14,67 @@
 
 get_header();
 ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<!-- Page Title Bar -->
+	<section class="page-title parallax">
+      <div data-parallax="scroll" data-image-src="images/bg/18.jpg" class="parallax-bg"></div>
+      <div class="parallax-overlay">
+        <div class="centrize">
+          <div class="v-center">
+            <div class="container">
+              <div class="title center">
+                <h1 class="upper">This is our blog<span class="red-dot"></span></h1>
+                <h4>We have a few tips for you.</h4>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	</section>
+	
+	<section>
+      <div class="container">
+        <!-- Main Content Area -->
+        <div class="col-md-8">
+          <div class="blog-posts">
+            <article class="post-single">
+              <div class="post-info">
+                <h2><a href="#">Checklists for Startups</a></h2>
+                <h6 class="upper"><span>By</span><a href="#"> Admin</a><span class="dot"></span><span>28 September 2015</span><span class="dot"></span><a href="#" class="post-tag">Startups</a></h6>
+              </div>
+              <div class="post-media">
+                <div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true" class="flexslider nav-outside">
+                  <ul class="slides">
+                    <li><img src="images/blog/1.jpg" alt=""></li>
+                    <li><img src="images/blog/2.jpg" alt=""></li>
+                    <li><img src="images/blog/3.jpg" alt=""></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="post-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Repudiandae possimus quas odio nisi optio asperiores, vitae error laudantium, ratione odit ipsa obcaecati debitis deleniti minus, illo maiores placeat omnis magnam.</p>
+                <p><a href="#" class="btn btn-color btn-sm">Read More</a></p>
+              </div>
+            </article>
+		  </div>
+		  
+		  <!-- Pagination -->
+          <ul class="pagination">
+            <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="ti-arrow-left"></i></span></a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="ti-arrow-right"></i></span></a></li>
+          </ul>
+		</div>
+				
+		<?php get_sidebar(); ?>
+        
+      </div>
+    </section>
 
 <?php
-get_sidebar();
+
 get_footer();

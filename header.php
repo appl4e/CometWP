@@ -20,13 +20,13 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <!-- <div id="loader">
+    <div id="loader">
       <div class="centrize">
         <div class="v-center">
           <div id="mask"><span></span><span></span><span></span><span></span><span></span></div>
         </div>
       </div>
-    </div> -->
+    </div>
     <header id="topnav">
       <div class="container">
         <div class="logo"><a href="index.html"><img src="images/logo_light.png" alt="" class="logo-light"><img src="images/logo_dark.png" alt="" class="logo-dark"></a></div>
