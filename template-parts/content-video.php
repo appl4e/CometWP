@@ -1,3 +1,14 @@
+<?php
+/**
+ * Template part for displaying video posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package comet
+ */
+
+?>
+
 <article class="post-single">
 	<div class="post-info">
 	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -10,7 +21,7 @@
 	</div>
 	<div class="post-media">
         <div class="media-video">
-            <iframe src="https://www.youtube.com/embed/rrT6v5sOwJg" frameborder="0"></iframe>
+            <?php echo wp_oembed_get(get_post_meta(get_the_id(), '_video_field', true)); ?>
         </div>
     </div>
 	<div class="post-body">

@@ -197,6 +197,16 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Inicluding Metabox
+ */
+require get_template_directory() . '/inc/metabox/init.php';
+
+/**
+ * Including metabox config file
+ */
+require get_template_directory() . '/inc/metabox/config.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
